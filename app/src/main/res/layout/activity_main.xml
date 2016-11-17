@@ -1,18 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.myemcu.ttff_365.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"/>
-</RelativeLayout>
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <RadioGroup
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="首页"
+            android:button="@null"
+            android:gravity="center"
+            android:checked="true"
+            android:drawableTop="@drawable/rb_home_selector"
+            android:textColor="@color/bottom_rb_text_color_selector"
+            android:drawablePadding="3dp" tools:ignore="HardcodedText"/>
+
+        <RadioButton
+            android:id="@+id/rb_home1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="收藏"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/rb_rim_selector"
+            android:textColor="@color/bottom_rb_text_color_selector"
+            android:drawablePadding="3dp" tools:ignore="HardcodedText"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+
+                android:src="@drawable/home_publish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/defualt_text_color"
+                android:text="发布信息" tools:ignore="HardcodedText"/>
+
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/rb_home3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="消息"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/rb_message_selector"
+            android:textColor="@color/bottom_rb_text_color_selector"
+            android:drawablePadding="3dp" tools:ignore="HardcodedText"/>
+
+        <RadioButton
+            android:id="@+id/rb_home4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="我的"
+            android:button="@null"
+            android:gravity="center"
+            android:drawableTop="@drawable/rb_center_selector"
+            android:textColor="@color/bottom_rb_text_color_selector"
+            android:drawablePadding="3dp" tools:ignore="HardcodedText"/>
+
+    </RadioGroup>
+
+</LinearLayout>
