@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-public class WelcomeActivity extends Activity {
+public class WelcomeActivity extends Activity { // Activity继承配合清单文件使其全屏
 
     private ImageView iv_welcome;
 
