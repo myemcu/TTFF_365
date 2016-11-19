@@ -2,11 +2,27 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.myemcu.ttff_365.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/top_bg_color"
+        android:layout_height="@dimen/title_bar_height">
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="天天防腐"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_main_text_size"
+            tools:ignore="HardcodedText"/>
+
+    </RelativeLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
@@ -34,7 +50,7 @@
             android:drawablePadding="3dp" tools:ignore="HardcodedText"/>
 
         <RadioButton
-            android:id="@+id/rb_home1"
+            android:id="@+id/rb_collection"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -55,19 +71,21 @@
 
                 android:src="@drawable/home_publish"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" tools:ignore="ContentDescription"/>
+                android:layout_height="wrap_content"
+                tools:ignore="ContentDescription"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:textColor="@color/defualt_text_color"
-                android:text="发布信息" tools:ignore="HardcodedText"/>
+                android:text="发布信息"
+                tools:ignore="HardcodedText"/>
 
         </LinearLayout>
 
         <RadioButton
-            android:id="@+id/rb_home3"
+            android:id="@+id/rb_message"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -79,7 +97,7 @@
             android:drawablePadding="3dp" tools:ignore="HardcodedText"/>
 
         <RadioButton
-            android:id="@+id/rb_home4"
+            android:id="@+id/rb_myself"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"

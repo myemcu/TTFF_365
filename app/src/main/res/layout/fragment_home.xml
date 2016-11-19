@@ -1,15 +1,292 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    分隔线原理：
+            总背景为灰，中间上下两项来个margin左右1dp,第二行总水平布局中来个margintop顶边距1dp即可。
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
-              android:gravity="center"
+              android:background="@color/root_bg_color"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!--ScrollView坑：ScrollView内部只能有一个子元素，即不能并列两个子元素，所以需要把所有的子元素
+                      放到一个LinearLayout内部或RelativeLayout等其他布局方式。-->
+
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="首页"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"/>
+        android:scrollbars="none" tools:ignore="UselessParent">
+
+        <!--
+            这两句如果没有的话，初始显示首页时，顶部图片看不到
+            作用：进入一般及触摸模式下获得焦点
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+        -->
+
+        <LinearLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="Orientation">
+
+            <ImageView
+                android:id="@+id/iv_top_photo"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                tools:ignore="ContentDescription"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="DisableBaselineAlignment">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:layout_weight="1">
+
+                <ImageView
+                    android:src="@drawable/labour_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:ignore="ContentDescription"/>
+
+                <TextView
+                    android:text="劳务"
+                    android:textColor="@color/colorPrimary"
+                    style="@style/middle_6_items"
+                    tools:ignore="HardcodedText"/>
+
+                <TextView
+                    android:gravity="center"
+                    android:text="找信息、找团队、\n找工人"
+                    style="@style/middle_6_items"
+                    tools:ignore="HardcodedText"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            tools:ignore="RtlHardcoded">
+
+            <ImageView
+                android:src="@drawable/insurance_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:text="保险"
+                android:textColor="@color/colorPrimary"
+                style="@style/middle_6_items"
+                tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:gravity="center"
+                android:text="按天买的意外\n保险"
+                style="@style/middle_6_items"
+                tools:ignore="HardcodedText"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:layout_weight="1"
+            tools:ignore="RtlHardcoded">
+
+            <ImageView
+                android:src="@drawable/technology_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:text="技术"
+                android:textColor="@color/colorPrimary"
+                style="@style/middle_6_items"
+                tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:gravity="center"
+                android:text="找技术专家\n解决技术难题"
+                style="@style/middle_6_items"
+                tools:ignore="HardcodedText"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        tools:ignore="DisableBaselineAlignment">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <ImageView
+                android:src="@drawable/equipment_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:text="设备"
+                android:textColor="@color/colorPrimary"
+                style="@style/middle_6_items"
+                tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:gravity="center"
+                android:text="闲置设备租\n赁，买卖"
+                style="@style/middle_6_items"
+                tools:ignore="HardcodedText"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:gravity="center"
+            android:layout_weight="1"
+            tools:ignore="RtlHardcoded">
+
+            <ImageView
+                android:src="@drawable/league_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:text="加盟"
+                android:textColor="@color/colorPrimary"
+                style="@style/middle_6_items"
+                tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:gravity="center"
+                android:text="个人加盟,企业聘证,\n联营企业"
+                style="@style/middle_6_items"
+                tools:ignore="HardcodedText"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:gravity="center"
+            android:layout_weight="1"
+            tools:ignore="RtlHardcoded">
+
+            <ImageView
+                android:src="@drawable/cost_exchange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:text="成本"
+                android:textColor="@color/colorPrimary"
+                style="@style/middle_6_items"
+                tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:gravity="center"
+                android:text="工程交流与\n成本讨论"
+                style="@style/middle_6_items"
+                tools:ignore="HardcodedText"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/icon_line"
+            android:background="@color/white"
+            android:drawablePadding="8dp"
+            android:padding="5dp"
+            android:text="推荐企业"
+            android:textSize="16sp"
+            android:layout_marginTop="1dp"
+            tools:ignore="HardcodedText,RtlHardcoded"/>
+
+            <ImageView
+                android:id="@+id/iv_recommend_compary"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:scaleType="fitXY" tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_line"
+                android:background="@color/white"
+                android:drawablePadding="8dp"
+                android:padding="5dp"
+                android:text="行业资讯"
+                android:textSize="16sp"
+                android:layout_marginTop="1dp"
+                tools:ignore="HardcodedText,RtlHardcoded"/>
+
+            <!--<ListView
+            android:id="@+id/list_view"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="NestedScrolling"/>-->
+
+            <!--ScrollView+ListView会使ListView显示不全，故使用下面的这个自定义的ListView-->
+
+            <com.myemcu.ttff_365.ui.ImplantListView
+                android:id="@+id/list_view"
+                android:layout_marginTop="1dp"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="NestedScrolling"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
