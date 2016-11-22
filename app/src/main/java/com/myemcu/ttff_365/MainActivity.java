@@ -30,17 +30,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         setContentView(R.layout.activity_main);
 
-        // 主页解决方案：ViewPager+Fragment+RadioButton(栗如：BJNews)(本例所用)
-        // TabHost+Fragment(过时)
-        // ViewGroup+Fragment+动态切换(Button加载Fragment)(不建议，因：不断地销毁和创建)
+        // 主页方案：ViewPager+Fragment+RadioButton(栗如：BJNews)(本例所用)
 
-        // 1 完善activity_main.xml
-
-        // 2 初始化视图
         initView();
 
-        // 3 初始化数据(设置ViewPager适配器)
-        initData();
+        initData(); // 设置ViewPager适配器
 
         // 4 设置RadioButton点击事件
         rb_home.setOnClickListener(this);
@@ -48,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rb_message.setOnClickListener(this);
         rb_myself.setOnClickListener(this);
 
-        // 5 设置ViewPage滑动监控事件
+        // 5 设置ViewPage滑动监听事件
         view_pager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

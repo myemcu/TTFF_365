@@ -68,13 +68,13 @@ public class HomeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        // 实例化控件
-        findViews();
+        findViews(); // 实例化控件
 
         // (先写的是这个)联网请求数据(第三方Okhttp && Okio)(D:\Android_3rd中的okhttp-master与okio-master)(需NewModlue建库,e.g:BaseUtils)
         // 号外，直接从GitHub上下的Okhttp && Okio在烧写时报各种错，这里用的是案例提供的Okhttp、Okio。
         // 别忘了添加工程依赖
-        requestHomeData();
+
+        requestHomeData();  // 联网请求数据
 
         // 设置一些点击事件
 

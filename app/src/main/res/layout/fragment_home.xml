@@ -5,6 +5,7 @@
             总背景为灰，中间上下两项来个margin左右1dp,第二行总水平布局中来个margintop顶边距1dp即可。
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:myemcu="http://schemas.android.com/apk/res-auto"
               xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:background="@color/root_bg_color"
@@ -34,11 +35,12 @@
             android:orientation="vertical"
             tools:ignore="Orientation">
 
-            <ImageView
+            <com.myemcu.ttff_365.ui.ProportionImageView
                 android:id="@+id/iv_top_photo"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:scaleType="fitXY"
+                android:layout_height="0dp"
+                myemcu:proportion_width="2"
+                myemcu:proportion_height="1"
                 tools:ignore="ContentDescription"/>
 
             <LinearLayout
@@ -237,23 +239,25 @@
         </LinearLayout>
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/icon_line"
-            android:background="@color/white"
-            android:drawablePadding="8dp"
-            android:padding="5dp"
-            android:text="推荐企业"
-            android:textSize="16sp"
-            android:layout_marginTop="1dp"
-            tools:ignore="HardcodedText,RtlHardcoded"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_line"
+                android:background="@color/white"
+                android:drawablePadding="8dp"
+                android:padding="5dp"
+                android:text="推荐企业"
+                android:textSize="16sp"
+                android:layout_marginTop="1dp"
+                tools:ignore="HardcodedText,RtlHardcoded"/>
 
-            <ImageView
+            <com.myemcu.ttff_365.ui.ProportionImageView
                 android:id="@+id/iv_recommend_compary"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:scaleType="fitXY" tools:ignore="ContentDescription"/>
+                android:layout_height="0dp"
+                myemcu:proportion_width="2"
+                myemcu:proportion_height="1"
+                tools:ignore="ContentDescription"/>
 
             <TextView
                 android:layout_width="match_parent"

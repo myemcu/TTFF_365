@@ -15,8 +15,8 @@ public class HomeViewPagerAdapter extends FragmentPagerAdapter{
 
     private final ArrayList<Fragment> fragments;
 
-    // 构造器
-    public HomeViewPagerAdapter(FragmentManager fm, ArrayList<Fragment> fragments) {// 新增参数：fragments(待传入的Fragment集)
+    // 构造器，新增参数：fragments(待传入的Fragment集)
+    public HomeViewPagerAdapter(FragmentManager fm, ArrayList<Fragment> fragments) {
         super(fm);
 
         this.fragments=fragments;
