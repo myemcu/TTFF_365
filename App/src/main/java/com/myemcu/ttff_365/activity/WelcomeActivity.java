@@ -1,12 +1,13 @@
-package com.myemcu.ttff_365;
+package com.myemcu.ttff_365.activity;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+
+import com.myemcu.ttff_365.R;
 
 public class WelcomeActivity extends Activity { // Activity继承配合清单文件使其全屏
 

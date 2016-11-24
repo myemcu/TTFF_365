@@ -1,4 +1,4 @@
-package com.myemcu.ttff_365;
+package com.myemcu.ttff_365.activity;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioButton;
 
+import com.myemcu.ttff_365.R;
 import com.myemcu.ttff_365.adapter.HomeViewPagerAdapter;
 import com.myemcu.ttff_365.fragment.CollectionFragment;
 import com.myemcu.ttff_365.fragment.HomeFragment;

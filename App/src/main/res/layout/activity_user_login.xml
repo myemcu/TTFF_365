@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:background="@color/root_bg_color"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/top_bg_color"
+        android:layout_height="@dimen/title_bar_height">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="天天防腐"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_main_text_size"
+            tools:ignore="HardcodedText"/>
+
+    </RelativeLayout>
+
+    <!--<EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/login_user_name_icon"
+        tools:ignore="LabelFor,RtlHardcoded,TextFields"/>-->
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/color_login_bg"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/login_user_name_icon"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:ignore="ContentDescription,RtlHardcoded"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:inputType="phone"
+            android:background="@null"
+            android:hint="手机号"
+            tools:ignore="HardcodedText,LabelFor,RtlHardcoded,TextFields"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/color_login_bg"
+        android:padding="10dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/login_user_password_icon"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:ignore="ContentDescription,RtlHardcoded"/>
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:hint="密码"
+            android:background="@null"
+            android:inputType="textPassword"
+            tools:ignore="HardcodedText,LabelFor,RtlHardcoded,TextFields"/>
+
+       <CheckBox
+           android:id="@+id/cb_check_password"
+           android:layout_width="20dp"
+           android:layout_height="20dp"
+           android:button="@drawable/check_password_selector" tools:ignore="RtlHardcoded"/>
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="登  陆"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:background="@drawable/btn_login_selector"
+        tools:ignore="HardcodedText"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="wrap_content" tools:ignore="RtlHardcoded">
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="忘记密码？"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/main_color"
+            android:layout_height="wrap_content" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp"
+            android:paddingRight="15dp"
+            android:text="手机快捷登录"
+            android:textColor="@color/main_color"
+            android:layout_height="wrap_content" tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
+    </RelativeLayout>
+
+</LinearLayout>

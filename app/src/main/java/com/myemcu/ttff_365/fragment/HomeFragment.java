@@ -1,6 +1,5 @@
 package com.myemcu.ttff_365.fragment;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,20 +11,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.myemcu.ttff_365.R;
-import com.myemcu.ttff_365.WebDetailActivity;
+import com.myemcu.ttff_365.activity.WebDetailActivity;
 import com.myemcu.ttff_365.adapter.HomeListViewAdapter;
 import com.myemcu.ttff_365.javabean.HomeDataResult;
 import com.myemcu.ttff_365.ui.ImplantListView;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -33,8 +28,6 @@ import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
-import static com.myemcu.ttff_365.WebDetailActivity.URL_KEY;
 
 /**
  * Created by Administrator on 2016/11/17 0017.

@@ -1,15 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:gravity="center"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+             android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="我的"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/root_bg_color"
+        android:orientation="vertical" tools:ignore="ScrollViewSize">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_user_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/top_bg_color"
+            android:drawableLeft="@drawable/center_default_head"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:padding="20dp"
+            android:text="登录/注册"
+            android:textColor="@color/white" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+        <LinearLayout
+            android:id="@+id/user_logined_ll"
+            android:visibility="gone"
+            android:background="@color/top_bg_color"
+            android:layout_width="match_parent"
+            android:padding="20dp"
+            android:gravity="center_vertical"
+            android:layout_height="wrap_content">
+
+            <!--<com.hui.ffu365.ui.RoundImageView
+                android:id="@+id/user_head_iv"
+                android:src="@drawable/center_default_head"
+                android:layout_width="80dp"
+                android:layout_height="80dp" />-->
+
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_height="wrap_content" tools:ignore="RtlHardcoded">
+                <TextView
+                    android:id="@+id/user_name_tv"
+                    android:layout_width="wrap_content"
+                    android:text="曾辉"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content" tools:ignore="HardcodedText"/>
+
+                <TextView
+                    android:id="@+id/user_location_tv"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:text="湖南省长沙市"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content" tools:ignore="HardcodedText"/>
+            </LinearLayout>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:background="@drawable/white_code"
+                android:layout_height="wrap_content" tools:ignore="ContentDescription"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" tools:ignore="DisableBaselineAlignment">
+
+            <LinearLayout
+                android:background="@color/white"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="未签到" tools:ignore="HardcodedText"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="我的任务"
+                    android:textSize="@dimen/default_text_size" tools:ignore="HardcodedText"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:background="@color/white"
+                android:layout_width="0dp"
+                android:layout_marginLeft="1dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="20dp" tools:ignore="RtlHardcoded">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="未签到" tools:ignore="HardcodedText"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="我的任务"
+                    android:textSize="@dimen/default_text_size" tools:ignore="HardcodedText"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center"
+                android:layout_marginLeft="1dp"
+                android:orientation="vertical"
+                android:padding="20dp" tools:ignore="RtlHardcoded">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="未签到" tools:ignore="HardcodedText"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="我的任务"
+                    android:textSize="@dimen/default_text_size" tools:ignore="HardcodedText"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/purchase_records"
+                android:text="购买记录"
+                android:background="@color/white"
+                android:drawablePadding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content" tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:padding="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/my_order"
+                android:text="我的订单"
+                android:layout_marginLeft="1dp"
+                android:background="@color/white"
+                android:drawablePadding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+            <TextView
+                android:padding="10dp"
+                android:layout_width="0dp"
+                android:background="@color/white"
+                android:layout_weight="1"
+                android:layout_marginLeft="1dp"
+                android:drawableTop="@drawable/my_publish"
+                android:text="我的发布"
+                android:drawablePadding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content" tools:ignore="HardcodedText,RtlHardcoded"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="1dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/worker_manage_center"
+                android:text="工人管理中心"
+                android:background="@color/white"
+                android:drawablePadding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content" tools:ignore="HardcodedText"/>
+
+            <TextView
+                android:padding="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:drawableTop="@drawable/team_manage_center"
+                android:text="团队管理中心"
+                android:layout_marginLeft="1dp"
+                android:background="@color/white"
+                android:drawablePadding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+            <TextView
+                android:padding="10dp"
+                android:layout_width="0dp"
+                android:background="@color/white"
+                android:layout_weight="1"
+                android:layout_marginLeft="1dp"
+                android:drawableTop="@drawable/expert_manage_center"
+                android:text="技术管理中心"
+                android:drawablePadding="10dp"
+                android:gravity="center_horizontal"
+                android:layout_height="wrap_content" tools:ignore="HardcodedText,RtlHardcoded"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_marginTop="20dp"
+            android:text="常见问题"
+            android:drawableLeft="@drawable/common_problem"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/right_arrow"
+            android:layout_height="wrap_content" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+
+        <!--@+id/user_exit_login-->
+        <TextView
+            android:id="@+id/user_exit_login"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_marginTop="1dp"
+            android:text="常见问题"
+            android:drawableLeft="@drawable/common_problem"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/right_arrow"
+            android:layout_height="wrap_content" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_marginTop="1dp"
+            android:text="常见问题"
+            android:drawableLeft="@drawable/common_problem"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/right_arrow"
+            android:layout_height="wrap_content" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_marginTop="1dp"
+            android:text="常见问题"
+            android:drawableLeft="@drawable/common_problem"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:drawablePadding="10dp"
+            android:layout_marginBottom="10dp"
+            android:drawableRight="@drawable/right_arrow"
+            android:layout_height="wrap_content" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+    </LinearLayout>
+
+</ScrollView>

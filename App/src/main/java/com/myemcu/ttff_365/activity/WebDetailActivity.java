@@ -1,9 +1,11 @@
-package com.myemcu.ttff_365;
+package com.myemcu.ttff_365.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+
+import com.myemcu.ttff_365.R;
 
 
 // 显示网页内容
