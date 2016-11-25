@@ -22,12 +22,6 @@
 
     </RelativeLayout>
 
-    <!--<EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/login_user_name_icon"
-        tools:ignore="LabelFor,RtlHardcoded,TextFields"/>-->
-
     <LinearLayout
         android:orientation="horizontal"
         android:layout_marginTop="15dp"

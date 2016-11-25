@@ -1,5 +1,7 @@
 package com.myemcu.ttff_365.activity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +20,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.myemcu.ttff_365.R;
+import com.myemcu.ttff_365.fragment.MyselfFragment;
 import com.myemcu.ttff_365.javabean.HomeDataResult;
 import com.myemcu.ttff_365.javabean.UserLoginResult;
 import com.myemcu.ttff_365.utils.MD5Util;
@@ -121,6 +124,9 @@ public class UserLoginActivity extends AppCompatActivity implements View.OnClick
 
             @Override   // 请求成功，数据在response中，就是获取到的json字符串(LogCat->Info->TAG:进行观察)
             public void onResponse(Call call, Response response) throws IOException {
+
+                // Toast.makeText(UserLoginActivity.this,"登陆成功",Toast.LENGTH_SHORT).show(); // 放这里也要崩
+
                 String result = response.body().string();
                 Log.e("TAG",result);    // 验证时，初始账号密码为：14726932514-12456(做到这里的时候，先要去看服务端的返回数据)
 
@@ -129,24 +135,34 @@ public class UserLoginActivity extends AppCompatActivity implements View.OnClick
                 loginResult = gson.fromJson(result, UserLoginResult.class);
 
                 // 处理登陆结果
-                //delLoginResult(loginResult);
+                delLoginResult(loginResult);
             }
         });
-
-        // 3 处理服务器的返回数据
     }
 
+
+    // is_Login:登陆标志
+    // user_info:登陆后的用户数据
     private void delLoginResult(UserLoginResult result) {
         // 1 首先判断有没有登陆成功
-        if (result.getErrcode()== 1) {
+        if (result.getErrcode() == 1) {
 
-            Toast.makeText(this,"欢迎您：",Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this,"欢迎您：",Toast.LENGTH_SHORT).show(); // 吐司要崩，居然
 
-            // 1 保存登录状态 当前设置为已登陆
+            // 1 保存登录状态标志 当前设置为已登陆
+            SharedPreferences sp = getSharedPreferences("info", MODE_PRIVATE);
+            sp.edit().putBoolean("is_Login",true).apply();// 放一个布尔值，值为true，代表已登陆
 
-            // 2 保存用户信息
+            // 2 向SharedPreferences保存所有用户数据
+            UserLoginResult.DataBean userData = result.getData();   // 获取对象数据
+            Gson gson = new Gson();                                 // 使用Gson工具
+            String userInfoStr = gson.toJson(userData);             // 将对象数据转换为json字符串
+            sp.edit().putString("user_info",userInfoStr).apply();   // 再将json字符串保存到SharedPreferences
 
-            // 3 关掉这个页面
+            // 3 执行完成，退出这个页面
+            finish();
+
+
         }else {
             Toast.makeText(this,result.getErrmsg(),Toast.LENGTH_SHORT).show();
         }

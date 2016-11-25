@@ -22,49 +22,52 @@
             android:textColor="@color/white" tools:ignore="HardcodedText,RtlHardcoded"/>
 
         <LinearLayout
-            android:id="@+id/user_logined_ll"
+            android:id="@+id/ll_user_login"
             android:visibility="gone"
+            android:orientation="horizontal"
             android:background="@color/top_bg_color"
-            android:layout_width="match_parent"
             android:padding="20dp"
             android:gravity="center_vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!--<com.hui.ffu365.ui.RoundImageView
-                android:id="@+id/user_head_iv"
+            <com.myemcu.ttff_365.ui.RoundImageView
+                android:id="@+id/iv_user_header"
                 android:src="@drawable/center_default_head"
                 android:layout_width="80dp"
-                android:layout_height="80dp" />-->
+                android:layout_height="80dp"/>
 
             <LinearLayout
-                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:layout_marginStart="10dp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_height="wrap_content" tools:ignore="RtlHardcoded">
-                <TextView
-                    android:id="@+id/user_name_tv"
-                    android:layout_width="wrap_content"
-                    android:text="曾辉"
-                    android:textColor="@color/white"
-                    android:layout_height="wrap_content" tools:ignore="HardcodedText"/>
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/user_location_tv"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:text="湖南省长沙市"
+                    android:id="@+id/tv_user_name"
+                    android:text="辉哥"
                     android:textColor="@color/white"
-                    android:layout_height="wrap_content" tools:ignore="HardcodedText"/>
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_user_location"
+                    android:text="北京市-丰台区"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
             </LinearLayout>
 
-
             <ImageView
+                android:src="@drawable/white_code"
                 android:layout_width="wrap_content"
-                android:background="@drawable/white_code"
-                android:layout_height="wrap_content" tools:ignore="ContentDescription"/>
-        </LinearLayout>
+                android:layout_height="wrap_content"/>
 
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -236,7 +239,6 @@
 
         <!--@+id/user_exit_login-->
         <TextView
-            android:id="@+id/user_exit_login"
             android:layout_width="match_parent"
             android:padding="10dp"
             android:layout_marginTop="1dp"
@@ -260,11 +262,14 @@
             android:drawableRight="@drawable/right_arrow"
             android:layout_height="wrap_content" tools:ignore="HardcodedText,RtlHardcoded"/>
 
+
+        <!--模拟退出登录-->
         <TextView
+            android:id="@+id/tv_user_exit"
             android:layout_width="match_parent"
             android:padding="10dp"
             android:layout_marginTop="1dp"
-            android:text="常见问题"
+            android:text="退出登录"
             android:drawableLeft="@drawable/common_problem"
             android:background="@color/white"
             android:gravity="center_vertical"

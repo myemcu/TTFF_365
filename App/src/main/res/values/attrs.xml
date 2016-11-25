@@ -4,4 +4,11 @@
         <attr name="proportion_width" format="float"/>      <!--属性名(比例宽)-->
         <attr name="proportion_height" format="float"/>     <!--属性名(比例高)-->
     </declare-styleable>
+
+    <!--圆型图片用-->
+    <declare-styleable name="roundedimageview">
+        <attr name="border_thickness" format="dimension"/>
+        <attr name="border_outside_color" format="color"/>
+        <attr name="border_inside_color" format="color"/>
+    </declare-styleable>
 </resources>

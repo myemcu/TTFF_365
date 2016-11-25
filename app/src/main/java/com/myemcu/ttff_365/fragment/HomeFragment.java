@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
@@ -50,6 +51,19 @@ public class HomeFragment extends Fragment {
     private Handler handler = new Handler();
     private HomeDataResult homeDataResult;  // bean对象
 
+    private boolean isVisable = false;
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        //判断Fragment中的ListView时候存在，判断该Fragment时候已经正在前台显示  通过这两个判断，就可以知道什么时候去加载数据了
+        if (getUserVisibleHint() && isVisible()) {
+            isVisable = true;
+        }else{
+            isVisable = false;
+        }
+        super.setUserVisibleHint(isVisibleToUser);
+    }
+
     @Nullable
     @Override   // Fragment视图
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -59,6 +73,10 @@ public class HomeFragment extends Fragment {
 
     @Override   // Fragment逻辑
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        if (isVisable) {
+            // 当用户切换到本Fragment时，再加载数据
+            Toast.makeText(getActivity(),"HomeFragment",Toast.LENGTH_SHORT).show();
+        }
         super.onActivityCreated(savedInstanceState);
 
         findViews(); // 实例化控件
