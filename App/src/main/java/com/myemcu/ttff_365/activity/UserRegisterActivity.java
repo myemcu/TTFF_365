@@ -23,6 +23,8 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.myemcu.ttff_365.R;
 import com.myemcu.ttff_365.javabean.UserLoginResult;
+import com.myemcu.ttff_365.ui.TimerButton;
+import com.myemcu.ttff_365.ui.VerificationCodeButton;
 import com.myemcu.ttff_365.utils.MD5Util;
 
 import java.io.IOException;
@@ -41,6 +43,8 @@ public class UserRegisterActivity extends AppCompatActivity implements View.OnCl
 
     private EditText et_user_phone,et_user_password;
     private CheckBox check_box_password;
+
+    private VerificationCodeButton btn_send_agree_code;
     private Button btn_register;
 
     private UserLoginResult loginResult;    // dataBean对象
@@ -56,8 +60,10 @@ public class UserRegisterActivity extends AppCompatActivity implements View.OnCl
         et_user_password = (EditText) findViewById(R.id.et_user_password);
         check_box_password = (CheckBox) findViewById(R.id.check_box_password);
 
-        btn_register = (Button) findViewById(R.id.btn_register);
-        tv_agreement = (TextView) findViewById(R.id.tv_agreement);
+        btn_send_agree_code = (VerificationCodeButton) findViewById(R.id.btn_send_agree_code); // 发送验证码Button
+        btn_register = (Button) findViewById(R.id.btn_register);                    // 注册Button
+
+        tv_agreement = (TextView) findViewById(R.id.tv_agreement);                  // 建议阅读TextView
 
         // 1 完成基本功能(密码的显示或隐藏)，CheckBox的状态监听
         check_box_password.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -80,6 +86,9 @@ public class UserRegisterActivity extends AppCompatActivity implements View.OnCl
         // 2 处理点击提交数据
         btn_register.setOnClickListener(this);
 
+        // 3 发送验证码Button的处理
+        btn_send_agree_code.setOnClickListener(this);
+        btn_send_agree_code.bindPhoneEditText(et_user_phone);   // 与EditText绑定(一绑定就导致按钮变灰)(当输入完整的手机号后才变绿)
 
         // R.color.main_color(找颜色)
         // 3 html方式设置文字样式不一
@@ -89,14 +98,18 @@ public class UserRegisterActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_login:
-                                UserLogin();
-                                break;
 
-            case R.id.tv_register:
-                                // 跳转到注册Activity
-                                //Intent intent = new Intent(this,);
-                                break;
+            case R.id.btn_send_agree_code:  /*按钮点击，向后台发请求*/
+                                            // 1 按钮设置为情稍后状态(用户已经正确输入完了手机号)
+                                            btn_send_agree_code.startLoad();
+                                            // 2 请求
+
+                                            // 3 获取后台返回值后，如果成功则倒计时,否则要把按钮的状态设置为又可以点
+                                            break;
+
+            case R.id.btn_register:
+                                
+                                            break;
         }
     }
 
