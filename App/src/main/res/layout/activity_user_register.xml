@@ -15,41 +15,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="登陆"
+            android:text="注册"
             android:textColor="@color/white"
             android:textSize="@dimen/title_main_text_size"
             tools:ignore="HardcodedText"/>
-
-        <TextView
-            android:id="@+id/tv_register"
-            android:text="注册"
-            android:textColor="@color/white"
-            android:textSize="14sp"
-            android:padding="10dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
 
     </RelativeLayout>
 
     <LinearLayout
         android:orientation="horizontal"
+        android:padding="10dp"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:background="@drawable/color_login_bg"
-        android:padding="10dp"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:src="@drawable/login_user_name_icon"
-            android:layout_marginLeft="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" tools:ignore="ContentDescription,RtlHardcoded"/>
 
         <EditText
             android:id="@+id/et_user_phone"
@@ -65,6 +48,33 @@
 
     <LinearLayout
         android:orientation="horizontal"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:background="@drawable/color_login_bg"
+            android:hint="  验证码"/>
+
+        <Button
+            android:text="发送验证码"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -73,12 +83,6 @@
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <ImageView
-            android:src="@drawable/login_user_password_icon"
-            android:layout_marginLeft="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" tools:ignore="ContentDescription,RtlHardcoded"/>
 
         <EditText
             android:id="@+id/et_user_password"
@@ -101,39 +105,27 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:text="登  陆"
+        android:text="注册"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:padding="10dp"
         android:background="@drawable/btn_login_selector"
         tools:ignore="HardcodedText"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tv_agreement"
+        android:text="参照Java代码"
+        android:drawableLeft="@drawable/consent_icon"
+        android:drawablePadding="5dp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="15dp"
-        android:layout_height="wrap_content" tools:ignore="RtlHardcoded">
-        <TextView
-            android:layout_width="wrap_content"
-            android:text="忘记密码？"
-            android:layout_marginLeft="10dp"
-            android:textColor="@color/main_color"
-            android:layout_height="wrap_content" tools:ignore="HardcodedText,RtlHardcoded"/>
-
-        <TextView
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_marginRight="10dp"
-            android:paddingRight="15dp"
-            android:text="手机快捷登录"
-            android:textColor="@color/main_color"
-            android:layout_height="wrap_content" tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
-    </RelativeLayout>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
+import android.text.Html;
 import android.text.Selection;
 import android.text.TextUtils;
 import android.text.method.HideReturnsTransformationMethod;
@@ -21,8 +22,6 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.myemcu.ttff_365.R;
-import com.myemcu.ttff_365.fragment.MyselfFragment;
-import com.myemcu.ttff_365.javabean.HomeDataResult;
 import com.myemcu.ttff_365.javabean.UserLoginResult;
 import com.myemcu.ttff_365.utils.MD5Util;
 
@@ -38,28 +37,27 @@ import okhttp3.Response;
 /**
  * Created by Administrator on 2016/11/24 0024.
  */
-public class UserLoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class UserRegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText et_user_phone,et_user_password;
     private CheckBox check_box_password;
-    private Button btn_login;
+    private Button btn_register;
 
     private UserLoginResult loginResult;    // dataBean对象
 
-    private TextView tv_register;
+    private TextView tv_agreement;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_login);
+        setContentView(R.layout.activity_user_register);
 
         et_user_phone = (EditText) findViewById(R.id.et_user_phone);
         et_user_password = (EditText) findViewById(R.id.et_user_password);
         check_box_password = (CheckBox) findViewById(R.id.check_box_password);
-        btn_login = (Button) findViewById(R.id.btn_login);
 
-        tv_register = (TextView) findViewById(R.id.tv_register);
-        tv_register.setOnClickListener(this);
+        btn_register = (Button) findViewById(R.id.btn_register);
+        tv_agreement = (TextView) findViewById(R.id.tv_agreement);
 
         // 1 完成基本功能(密码的显示或隐藏)，CheckBox的状态监听
         check_box_password.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -80,7 +78,12 @@ public class UserLoginActivity extends AppCompatActivity implements View.OnClick
         });
 
         // 2 处理点击提交数据
-        btn_login.setOnClickListener(this);
+        btn_register.setOnClickListener(this);
+
+
+        // R.color.main_color(找颜色)
+        // 3 html方式设置文字样式不一
+        tv_agreement.setText(Html.fromHtml("我已阅读并同意<font color='#24cfa2'>《天天防腐用户协议》</font>"));
     }
 
     @Override
@@ -92,8 +95,7 @@ public class UserLoginActivity extends AppCompatActivity implements View.OnClick
 
             case R.id.tv_register:
                                 // 跳转到注册Activity
-                                Intent intent = new Intent(this,UserRegisterActivity.class);
-                                startActivity(intent);
+                                //Intent intent = new Intent(this,);
                                 break;
         }
     }
