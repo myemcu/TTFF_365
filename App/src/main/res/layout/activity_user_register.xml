@@ -57,6 +57,7 @@
         android:layout_height="wrap_content">
 
         <EditText
+            android:id="@+id/et_user_code"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:padding="10dp"
