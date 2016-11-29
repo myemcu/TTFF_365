@@ -26,6 +26,8 @@ import com.myemcu.ttff_365.javabean.UserLoginResult;
 import com.myemcu.ttff_365.javabean.UserRequestCodeResult;
 
 import com.myemcu.ttff_365.ui.VerificationCodeButton;
+import com.myemcu.ttff_365.utils.ActivityManagerUtil;
+
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -55,6 +57,10 @@ public class UserRegisterActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // 把MainActivity添加到Activity管理器中进行统一管理
+        ActivityManagerUtil.getInstance().addActivity(this);
+
         setContentView(R.layout.activity_user_register);
 
         findViews();
@@ -252,14 +258,14 @@ public class UserRegisterActivity extends AppCompatActivity implements View.OnCl
         });
     }
 
-    // 根据服务端返回信息处理结果
+    // 根据服务端验证码返回结果
     private void delCodeResult(final UserRequestCodeResult result) {
-                if (result.errcode == 1) {  // 按钮进入倒计时
-                    btn_send_agree_code.aginAfterTime(60);
-                }else {
-                    Toast.makeText(UserRegisterActivity.this,result.errmsg,Toast.LENGTH_SHORT).show();
-                    btn_send_agree_code.setNoraml();    // 按钮又能点(恢复正常)
-                }
+        if (result.errcode == 1) {  // 按钮进入倒计时
+            btn_send_agree_code.aginAfterTime(60);
+        }else {
+            Toast.makeText(UserRegisterActivity.this,result.errmsg,Toast.LENGTH_SHORT).show();
+            btn_send_agree_code.setNoraml();    // 按钮又能点(恢复正常)
+        }
     }
 
     // is_Login:登陆标志
@@ -281,7 +287,10 @@ public class UserRegisterActivity extends AppCompatActivity implements View.OnCl
             sp.edit().putString("user_info",userInfoStr).apply();   // 再将json字符串保存到SharedPreferences
 
             // 3 执行完成，退出这个页面 关闭登录界面
-            finish();
+            // 3.1 关闭当前页面
+            ActivityManagerUtil.getInstance().finishActivity(this);
+            // 3.2 关闭登录页面
+            ActivityManagerUtil.getInstance().finishActivity(UserLoginActivity.class);
         }else {
             // 登录失败(显示“手机号码已被注册”，该信息由服务端返回)
             Toast.makeText(this,result.getErrmsg(),Toast.LENGTH_SHORT).show();

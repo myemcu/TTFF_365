@@ -24,6 +24,7 @@ import com.myemcu.ttff_365.R;
 import com.myemcu.ttff_365.fragment.MyselfFragment;
 import com.myemcu.ttff_365.javabean.HomeDataResult;
 import com.myemcu.ttff_365.javabean.UserLoginResult;
+import com.myemcu.ttff_365.utils.ActivityManagerUtil;
 import com.myemcu.ttff_365.utils.MD5Util;
 
 import java.io.IOException;
@@ -51,6 +52,10 @@ public class UserLoginActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // 把MainActivity添加到Activity管理器中进行统一管理
+        ActivityManagerUtil.getInstance().addActivity(this);
+
         setContentView(R.layout.activity_user_login);
 
         et_user_phone = (EditText) findViewById(R.id.et_user_phone);

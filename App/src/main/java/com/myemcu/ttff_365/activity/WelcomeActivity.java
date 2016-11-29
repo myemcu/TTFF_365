@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.myemcu.ttff_365.R;
+import com.myemcu.ttff_365.utils.ActivityManagerUtil;
 
 public class WelcomeActivity extends Activity { // Activity继承配合清单文件使其全屏
 
@@ -16,6 +17,10 @@ public class WelcomeActivity extends Activity { // Activity继承配合清单文
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // 把MainActivity添加到Activity管理器中进行统一管理
+        ActivityManagerUtil.getInstance().addActivity(this);
+
         setContentView(R.layout.activity_welcome);
 
         iv_welcome = (ImageView) findViewById(R.id.iv_welcome);
@@ -53,9 +58,9 @@ public class WelcomeActivity extends Activity { // Activity继承配合清单文
 
             @Override
             public void onAnimationEnd(Animator animator) { // 动画完成
-                // 动画执行完成，进入主页面
-                LoadMain();
-                finish();
+                LoadMain();     // 动画执行完成，进入主页面
+                ActivityManagerUtil.getInstance().finishActivity(WelcomeActivity.this);
+                // finish();    // 这种方式被淘汰
             }
 
             @Override

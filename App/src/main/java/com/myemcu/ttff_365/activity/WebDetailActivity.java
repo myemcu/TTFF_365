@@ -6,6 +6,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import com.myemcu.ttff_365.R;
+import com.myemcu.ttff_365.utils.ActivityManagerUtil;
 
 
 // 显示网页内容
@@ -20,6 +21,10 @@ public class WebDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // 把MainActivity添加到Activity管理器中进行统一管理
+        ActivityManagerUtil.getInstance().addActivity(this);
+
         setContentView(R.layout.activity_web_detail);
 
         web_view = (WebView) findViewById(R.id.web_view);

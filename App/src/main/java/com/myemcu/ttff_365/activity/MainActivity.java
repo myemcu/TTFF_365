@@ -16,6 +16,7 @@ import com.myemcu.ttff_365.fragment.CollectionFragment;
 import com.myemcu.ttff_365.fragment.HomeFragment;
 import com.myemcu.ttff_365.fragment.MessageFragment;
 import com.myemcu.ttff_365.fragment.MyselfFragment;
+import com.myemcu.ttff_365.utils.ActivityManagerUtil;
 
 import java.util.ArrayList;
 
@@ -31,13 +32,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // 主页面全屏
-        /*requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
+        // 把MainActivity添加到Activity管理器中进行统一管理
+        ActivityManagerUtil.getInstance().addActivity(this);
 
         setContentView(R.layout.activity_main);
 
-        // 主页方案：ViewPager+Fragment+RadioButton(栗如：BJNews)(本例所用)
+        // 主页面全屏
+        /*requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);*/
 
         initView();
 
