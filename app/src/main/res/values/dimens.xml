@@ -10,4 +10,17 @@
     <dimen name="title_bar_height">48dp</dimen>
     <dimen name="title_main_text_size">18sp</dimen>
 
+
+    <!--activity_user_info用-->
+    <dimen name="ts1">10.0sp</dimen>
+    <dimen name="ts2">11.0sp</dimen>
+    <dimen name="ts3">12.0sp</dimen>
+    <dimen name="ts4">13.0sp</dimen>
+    <dimen name="ts5">14.0sp</dimen>
+    <dimen name="ts6">15.0sp</dimen>
+    <dimen name="ts7">16.0sp</dimen>
+    <dimen name="ts8">17.0sp</dimen>
+    <dimen name="ts9">18.0sp</dimen>
+    <dimen name="ts10">22.0sp</dimen>
+
 </resources>

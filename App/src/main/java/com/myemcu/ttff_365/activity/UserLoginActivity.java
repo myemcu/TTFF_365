@@ -157,7 +157,6 @@ public class UserLoginActivity extends AppCompatActivity implements View.OnClick
         });
     }
 
-
     // is_Login:登陆标志
     // user_info:登陆后的用户数据
     private void delLoginResult(UserLoginResult result) {

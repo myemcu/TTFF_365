@@ -14,13 +14,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.myemcu.ttff_365.R;
-import com.myemcu.ttff_365.activity.MainActivity;
+import com.myemcu.ttff_365.activity.UserInfoActivity;
 import com.myemcu.ttff_365.activity.UserLoginActivity;
 import com.myemcu.ttff_365.javabean.UserLoginResult;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Created by Administrator on 2016/11/17 0017.
@@ -73,6 +74,7 @@ public class MyselfFragment extends Fragment implements View.OnClickListener {
     private void setOnClickListener() {
         tv_user_login.setOnClickListener(this);     // 监听登陆TextView
         tv_user_exit.setOnClickListener(this);      // 监听退出TextView
+        ll_user_login.setOnClickListener(this);
     }
 
     private void findViews() {
@@ -88,8 +90,10 @@ public class MyselfFragment extends Fragment implements View.OnClickListener {
     public void onResume() {
         super.onResume();
 
+        Toast.makeText(context,"你回到了我",Toast.LENGTH_SHORT).show();
+
         // 从SharedPreferences中读取登录状态——(判断用户是否登陆，如果登陆则显示登陆头，否则显示未登陆头)
-        SharedPreferences sp = context.getSharedPreferences("info", Context.MODE_PRIVATE);
+        SharedPreferences sp = context.getSharedPreferences("info", MODE_PRIVATE);
         boolean is_Login = sp.getBoolean("is_Login", false);
 
         // 判断登录状态
@@ -99,7 +103,7 @@ public class MyselfFragment extends Fragment implements View.OnClickListener {
 
             /*设置用户信息*/
 
-            // 读取用户信息
+            // 读取用户信息(数据来自UserLoginActivity)
             String userInfostr = context.getSharedPreferences("info",Context.MODE_PRIVATE).getString("user_info",null); // 此时，读出来的是json字符串
             // 判空
             if (!TextUtils.isEmpty(userInfostr)) {
@@ -107,11 +111,13 @@ public class MyselfFragment extends Fragment implements View.OnClickListener {
                 Gson gson = new Gson(); // 使用Gson工具
                 UserLoginResult.DataBean userInfo = gson.fromJson(userInfostr, UserLoginResult.DataBean.class); // 把读出的json串转为对象(左为json串，右为数据Bean)
                 // 设置图片
-                Glide.with(context).load(userInfo.getMember_info().getMember_avatar()).into(iv_user_header);    // 这是哥圆角图片
+                Glide.with(context).load(userInfo.getMember_info().getMember_avatar()).into(iv_user_header);    // 这是圆角图片
                 // 设置文本
                 tv_user_name.setText(userInfo.getMember_info().getMember_name());
                 tv_user_location.setText(userInfo.getMember_info().getMember_location_text());
+
             }
+
         }else {
             tv_user_login.setVisibility(View.VISIBLE);
             ll_user_login.setVisibility(View.GONE);
@@ -123,14 +129,18 @@ public class MyselfFragment extends Fragment implements View.OnClickListener {
 
         switch (view.getId()) {
             case R.id.tv_user_login:
-                                        Intent intent = new Intent(context,UserLoginActivity.class);  // 跳转到登陆(注意，里面传的是getActivity())
-                                        startActivity(intent);
+                                        Intent intent1 = new Intent(context,UserLoginActivity.class);  // 跳转到登陆(注意，里面传的是getActivity())
+                                        startActivity(intent1);
                                         break;
 
             case R.id.tv_user_exit:  // 登出后，状态设为false
-                                        SharedPreferences sp = context.getSharedPreferences("info", Context.MODE_PRIVATE);
+                                        SharedPreferences sp = context.getSharedPreferences("info", MODE_PRIVATE);
                                         sp.edit().putBoolean("is_Login",false).apply();
                                         Toast.makeText(context,"已退出登录",Toast.LENGTH_SHORT).show();
+                                        break;
+
+            case R.id.ll_user_login:    Intent intent2 = new Intent(context, UserInfoActivity.class);
+                                        startActivity(intent2);
                                         break;
         }
     }

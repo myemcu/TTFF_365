@@ -3,6 +3,8 @@
           package="com.myemcu.ttff_365">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -25,6 +27,7 @@
         <activity android:name=".activity.WebDetailActivity"/>
         <activity android:name=".activity.UserLoginActivity"/>
         <activity android:name=".activity.UserRegisterActivity"/>
+        <activity android:name=".activity.UserInfoActivity"/>
 
     </application>
 

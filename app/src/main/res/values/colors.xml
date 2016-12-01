@@ -21,4 +21,10 @@
 
     <!-- 头部颜色 -->
     <color name="top_bg_color"> #323a45</color>
+
+    <!-- 灰色 -->
+    <color name="main_gray"> #767676</color>
+
+    <!-- 无色 -->
+    <color name="no_color">#00000000</color>
 </resources>

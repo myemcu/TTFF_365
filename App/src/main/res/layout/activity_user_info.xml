@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools" android:id="@id/root_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/root_bg_color"
+    android:orientation="vertical">
+
+    <ScrollView style="@style/width_match_height_wrap">
+
+        <LinearLayout
+            style="@style/width_match_height_wrap"
+            android:background="@color/root_bg_color"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/width_match_height_wrap"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <View style="@style/gray_line" />
+
+                <RelativeLayout
+                    style="@style/width_match_height_wrap"
+                    android:padding="5.0dip">
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10.0dip"
+                        android:text="头像："
+                        android:textSize="@dimen/ts4" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+                    <com.myemcu.ttff_365.ui.RoundImageView
+                        android:id="@id/user_logo"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="30.0dip"
+                        android:background="@drawable/center_default_head"
+                        android:scaleType="fitXY" tools:ignore="RtlHardcoded"/>
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10.0dip"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/right_arrow" tools:ignore="RtlHardcoded"/>
+                </RelativeLayout>
+
+                <View style="@style/gray_line" />
+
+                <RelativeLayout
+                    android:id="@id/user_qrcode"
+                    style="@style/width_match_height_wrap"
+                    android:gravity="center_vertical"
+                    android:padding="15.0dip">
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:contentDescription="@string/app_name"
+                        android:text="我的二维码："
+                        android:textSize="@dimen/ts4" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+                    <ImageView
+                        android:id="@id/right_arrow"
+                        style="@style/wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/right_arrow" tools:ignore="RtlHardcoded"/>
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15.0dip"
+                        android:layout_toLeftOf="@id/right_arrow"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/black_code" tools:ignore="RtlHardcoded"/>
+                </RelativeLayout>
+
+                <View style="@style/gray_line" />
+
+                <RelativeLayout
+                    android:id="@id/uncertification_ll"
+                    style="@style/width_match_height_wrap"
+                    android:gravity="center_vertical"
+                    android:padding="15.0dip">
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:contentDescription="@string/app_name"
+                        android:text="实名认证"
+                        android:textSize="@dimen/ts4" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+                    <TextView
+                        android:id="@id/user_registration"
+                        style="@style/wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_toLeftOf="@id/img_1"
+                        android:text=""
+                        android:textColor="#ff424242"
+                        android:textSize="@dimen/ts4" tools:ignore="RtlHardcoded"/>
+
+                    <ImageView
+                        android:id="@id/img_1"
+                        style="@style/wrap_content"
+                        android:layout_width="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/right_arrow" tools:ignore="RtlHardcoded"/>
+                </RelativeLayout>
+
+                <View style="@style/gray_line" />
+
+                <RelativeLayout
+                    style="@style/width_match_height_wrap"
+                    android:padding="15.0dip">
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/app_name"
+                        android:text="手机号码"
+                        android:textSize="@dimen/ts4" tools:ignore="HardcodedText"/>
+
+                    <TextView
+                        android:id="@id/user_phone"
+                        style="@style/wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5.0dip"
+                        android:layout_toLeftOf="@id/user_phone_change"
+                        android:text="\ 18874873279"
+                        android:textColor="#ff424242"
+                        android:textSize="@dimen/ts4" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+                    <TextView
+                        android:id="@id/user_phone_change"
+                        style="@style/wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@string/user_name_change"
+                        android:textColor="@color/main_color"
+                        android:textSize="@dimen/ts4" tools:ignore="HardcodedText,RtlHardcoded"/>
+                </RelativeLayout>
+
+                <TextView
+                    style="@style/width_match_height_wrap"
+                    android:background="@color/root_bg_color"
+                    android:padding="17.0dip"
+                    android:text="基本资料"
+                    android:textColor="@color/defualt_text_color"
+                    android:textSize="@dimen/ts4" tools:ignore="HardcodedText"/>
+
+                <LinearLayout
+                    android:id="@id/user_name_rl"
+                    style="@style/width_match_height_wrap"
+                    android:gravity="center_vertical"
+                    android:padding="10.0dip">
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:layout_marginLeft="5.0dip"
+                        android:contentDescription="@string/app_name"
+                        android:text="姓名："
+                        android:textSize="@dimen/ts4" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+                    <EditText
+                        android:id="@id/user_name"
+                        style="@style/height_wrap_width_weight"
+                        android:background="@null"
+                        android:gravity="right"
+                        android:hint="输入姓名"
+                        android:padding="5.0dip"
+                        android:textColor="#ff424242"
+                        android:textSize="@dimen/ts4" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:layout_marginRight="5.0dip"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/right_arrow" tools:ignore="RtlHardcoded"/>
+                </LinearLayout>
+
+                <View style="@style/gray_line" />
+
+                <LinearLayout
+                    android:id="@id/user_sex_rl"
+                    style="@style/width_match_height_wrap"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15.0dip"
+                    android:paddingRight="15.0dip">
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:text="性别："
+                        android:textSize="@dimen/ts4" tools:ignore="HardcodedText"/>
+
+                    <EditText
+                        android:id="@id/user_sex"
+                        style="@style/height_wrap_width_weight"
+                        android:layout_marginRight="5.0dip"
+                        android:background="@null"
+                        android:gravity="right"
+                        android:hint="请选择性别"
+                        android:paddingBottom="15.0dip"
+                        android:paddingTop="15.0dip"
+                        android:textColor="#ff424242"
+                        android:textSize="@dimen/ts4" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/right_arrow" tools:ignore="ObsoleteLayoutParam,RtlHardcoded"/>
+                </LinearLayout>
+
+                <View style="@style/gray_line" />
+
+                <LinearLayout
+                    style="@style/width_match_height_wrap"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15.0dip"
+                    android:paddingRight="15.0dip">
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:text="出生日期："
+                        android:textSize="@dimen/ts4" tools:ignore="HardcodedText"/>
+
+                    <EditText
+                        android:id="@id/user_age"
+                        style="@style/height_wrap_width_weight"
+                        android:layout_marginRight="5.0dip"
+                        android:background="@null"
+                        android:gravity="right"
+                        android:paddingBottom="15.0dip"
+                        android:paddingTop="15.0dip"
+                        android:text="请选择出生日期"
+                        android:textColor="#ff424242"
+                        android:textSize="@dimen/ts4" tools:ignore="HardcodedText,LabelFor,RtlHardcoded,TextFields"/>
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/right_arrow" />
+                </LinearLayout>
+
+                <View style="@style/gray_line" />
+
+                <LinearLayout
+                    style="@style/width_match_height_wrap"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="15.0dip"
+                    android:paddingRight="15.0dip">
+
+                    <TextView
+                        style="@style/wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:text="籍贯："
+                        android:textSize="@dimen/ts4" tools:ignore="HardcodedText"/>
+
+                    <TextView
+                        android:id="@id/user_from"
+                        style="@style/height_wrap_width_weight"
+                        android:layout_marginRight="5.0dip"
+                        android:gravity="right"
+                        android:lines="1"
+                        android:paddingBottom="15.0dip"
+                        android:paddingTop="15.0dip"
+                        android:text="请选择出籍贯"
+                        android:textColor="#ff424242" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+                    <ImageView
+                        style="@style/wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/right_arrow" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/wrap_content"
+                android:layout_margin="15.0dip"
+                android:contentDescription="@string/app_name"
+                android:drawableLeft="@drawable/tip_icon"
+                android:drawablePadding="8.0dip"
+                android:text="资料一旦提交后就不允许修改"
+                android:textColor="@color/defualt_text_color"
+                android:textSize="@dimen/ts4" tools:ignore="HardcodedText,RtlHardcoded"/>
+
+            <Button
+                android:id="@id/submit_user_name"
+                style="@style/width_match_height_wrap"
+                android:layout_marginBottom="30.0dip"
+                android:layout_marginLeft="21.0dip"
+                android:layout_marginRight="21.0dip"
+                android:layout_marginTop="28.0dip"
+                android:background="@drawable/login_bg_selector"
+                android:padding="10.0dip"
+                android:text="提 交"
+                android:textColor="@color/white"
+                android:textSize="@dimen/ts6"
+                android:visibility="gone" tools:ignore="HardcodedText"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
